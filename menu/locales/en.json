@@ -1,0 +1,65 @@
+{
+  "common": {
+    "appName": "Menu App",
+    "language": "Language"
+  },
+  "landing": {
+    "hero": {
+      "title": "Create Your Restaurant Digital Menu",
+      "subtitle": "A comprehensive solution to manage restaurant and cafe menus easily and efficiently",
+      "cta": "Get Started"
+    },
+    "features": {
+      "title": "Key Features",
+      "feature1": {
+        "title": "Easy Management",
+        "description": "Add and edit dishes and beverages effortlessly"
+      },
+      "feature2": {
+        "title": "Professional Design",
+        "description": "Beautiful and user-friendly menus for your customers"
+      },
+      "feature3": {
+        "title": "Multi-Language",
+        "description": "Support your customers in multiple languages"
+      },
+      "feature4": {
+        "title": "Powerful Analytics",
+        "description": "Track your restaurant performance with data insights"
+      }
+    },
+    "pricing": {
+      "title": "Pricing",
+      "basic": "Basic",
+      "pro": "Pro",
+      "enterprise": "Enterprise"
+    },
+    "cta": {
+      "signIn": "Sign In",
+      "signUp": "Sign Up"
+    }
+  },
+  "auth": {
+    "signIn": {
+      "title": "Sign In",
+      "email": "Email",
+      "password": "Password",
+      "rememberMe": "Remember me",
+      "forgotPassword": "Forgot password?",
+      "submit": "Sign In",
+      "noAccount": "Don't have an account?",
+      "signUpLink": "Create one"
+    },
+    "signUp": {
+      "title": "Create Account",
+      "restaurantName": "Restaurant Name",
+      "email": "Email",
+      "password": "Password",
+      "confirmPassword": "Confirm Password",
+      "phone": "Phone Number",
+      "submit": "Create Account",
+      "haveAccount": "Already have an account?",
+      "signInLink": "Sign In"
+    }
+  }
+}
