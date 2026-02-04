@@ -32,7 +32,7 @@ export default function SignInPage() {
   return (
     <div dir={rtl ? 'rtl' : 'ltr'} style={{ backgroundColor: colors.cream }} className="min-h-screen flex flex-col">
       {/* Navigation */}
-      <nav style={{ backgroundColor: colors.darkBlue }} className="border-b" style={{ borderColor: colors.gold }}>
+      <nav style={{ backgroundColor: colors.darkBlue, borderColor: colors.gold }} className="border-b">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
           <Link href="/" className="flex items-center gap-2">
             <div className="text-2xl font-bold" style={{ color: colors.gold }}>

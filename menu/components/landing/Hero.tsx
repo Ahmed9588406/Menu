@@ -1,145 +1,136 @@
-"use client"
+"use client";
+
 import { motion } from "framer-motion";
-import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Play, Star } from "lucide-react";
-import heroImage from "@/public/assets/hero-image.jpg";
+import { QrCode } from "lucide-react";
+import phoneMockup1 from "@/public/assets/phone-mockup-1.png";
+import phoneMockup2 from "@/public/assets/phone-mockup-2.png";
+import phoneMockup3 from "@/public/assets/phone-mockup-3.png";
+import Image from "next/image";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen pt-20 lg:pt-0 overflow-hidden">
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-hero opacity-[0.03]" />
+    <section className="relative min-h-screen pt-32 pb-20 overflow-hidden">
+      {/* Background effects */}
+      <div className="absolute inset-0 bg-gradient-hero" />
+      <div className="absolute inset-0 bg-gradient-radial" />
       
+      {/* Decorative glow */}
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-accent/20 rounded-full blur-[150px] pointer-events-none" />
+
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center min-h-screen py-16 lg:py-0">
-          {/* Left Content */}
+        <div className="flex flex-col items-center text-center">
+          {/* Logo */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
-            className="flex flex-col gap-8"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="mb-8"
           >
-            {/* Badge */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-2 bg-card rounded-full px-4 py-2 shadow-card w-fit"
-            >
-              <div className="flex items-center gap-0.5">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-accent text-accent" />
-                ))}
-              </div>
-              <span className="text-sm font-medium text-muted-foreground">
-                Trusted by 5,000+ restaurants
-              </span>
-            </motion.div>
+            <h2 className="text-5xl sm:text-6xl lg:text-7xl font-display font-bold tracking-tight">
+              <span className="text-foreground">SNAPE</span>
+              <span className="text-gradient ml-2">X</span>
+            </h2>
+          </motion.div>
 
-            {/* Heading */}
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-display font-bold text-foreground leading-tight">
-              Create Stunning
-              <br />
-              <span className="text-gradient-hero bg-gradient-hero">Digital Menus</span>
-              <br />
-              in Minutes
-            </h1>
+          {/* Heading */}
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-display font-bold text-foreground leading-tight mb-8"
+          >
+            The <span className="text-gradient">all-in-one solution</span> for cafes and
+            <br className="hidden sm:block" /> restaurants
+          </motion.h1>
 
-            {/* Subheading */}
-            <p className="text-lg lg:text-xl text-muted-foreground max-w-lg leading-relaxed">
-              Transform your restaurant's menu into a beautiful digital experience. 
-              No design skills needed. Just drag, drop, and publish.
-            </p>
+          {/* CTA Buttons */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="flex flex-col sm:flex-row gap-4 mb-16"
+          >
+            <Button variant="hero" size="xl" className="rounded-full">
+              Start Now
+            </Button>
+            <Button variant="outline" size="xl" className="rounded-full border-border/50 bg-transparent hover:bg-muted/30">
+              Our Pricing
+            </Button>
+          </motion.div>
 
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button variant="hero" size="xl" className="group">
-                Start Free Trial
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </Button>
-              <Button variant="outline" size="xl" className="group">
-                <Play className="w-5 h-5" />
-                Watch Demo
-              </Button>
-            </div>
+          {/* Phone Mockups */}
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="relative w-full max-w-4xl mx-auto"
+          >
+            <div className="flex items-end justify-center gap-4 sm:gap-6 lg:gap-8">
+              {/* Left Phone */}
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.6 }}
+                className="relative w-24 sm:w-36 lg:w-48 opacity-60"
+              >
+                <Image
+                  src={phoneMockup2}
+                  alt="Menu app"
+                  className="w-full h-auto rounded-2xl shadow-lg"
+                />
+              </motion.div>
 
-            {/* Trust indicators */}
-            <div className="flex items-center gap-6 pt-4">
-              <div className="flex flex-col">
-                <span className="text-2xl font-bold font-display text-foreground">10k+</span>
-                <span className="text-sm text-muted-foreground">Active Menus</span>
-              </div>
-              <div className="w-px h-12 bg-border" />
-              <div className="flex flex-col">
-                <span className="text-2xl font-bold font-display text-foreground">99.9%</span>
-                <span className="text-sm text-muted-foreground">Uptime</span>
-              </div>
-              <div className="w-px h-12 bg-border" />
-              <div className="flex flex-col">
-                <span className="text-2xl font-bold font-display text-foreground">24/7</span>
-                <span className="text-sm text-muted-foreground">Support</span>
-              </div>
+              {/* Center Phone (Main) */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.5 }}
+                className="relative w-40 sm:w-56 lg:w-72 z-10"
+              >
+                <div className="relative">
+                  <Image
+                    src={phoneMockup1}
+                    alt="Digital menu showcase"
+                    className="w-full h-auto rounded-3xl shadow-2xl shadow-accent/20"
+                  />
+                  {/* Glow effect behind main phone */}
+                  <div className="absolute inset-0 -z-10 blur-2xl bg-accent/30 rounded-3xl scale-95" />
+                </div>
+              </motion.div>
+
+              {/* Right Phone */}
+              <motion.div
+                initial={{ opacity: 0, x: 30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.7 }}
+                className="relative w-24 sm:w-36 lg:w-48 opacity-60"
+              >
+                <Image
+                  src={phoneMockup3}
+                  alt="Order management"
+                  className="w-full h-auto rounded-2xl shadow-lg"
+                />
+              </motion.div>
             </div>
           </motion.div>
 
-          {/* Right Content - Hero Image */}
+          {/* QR Code Link */}
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7, delay: 0.4 }}
-            className="relative"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.9 }}
+            className="mt-12"
           >
-            <div className="relative">
-              {/* Main image */}
-              <div className="relative rounded-2xl overflow-hidden shadow-lg">
-                <Image
-                  src={heroImage}
-                  alt="Digital menu on tablet"
-                  className="w-full h-auto object-cover"
-                  priority
-                />
-                {/* Overlay gradient */}
-                <div className="absolute inset-0 bg-gradient-to-t from-navy/20 to-transparent" />
+            <a
+              href="#"
+              className="inline-flex items-center gap-3 px-6 py-3 rounded-full glass-light border border-border/30 hover:border-accent/50 transition-colors group"
+            >
+              <span className="text-sm font-medium text-foreground">Go to website</span>
+              <div className="w-8 h-8 rounded-lg bg-foreground/10 flex items-center justify-center">
+                <QrCode className="w-4 h-4 text-foreground" />
               </div>
-
-              {/* Floating card 1 */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.8 }}
-                className="absolute -left-4 lg:-left-8 top-1/4 bg-card rounded-xl p-4 shadow-lg animate-float"
-              >
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-lg bg-gradient-accent flex items-center justify-center">
-                    <span className="text-xl">🍕</span>
-                  </div>
-                  <div>
-                    <p className="font-semibold text-foreground text-sm">New Order!</p>
-                    <p className="text-xs text-muted-foreground">Table #12</p>
-                  </div>
-                </div>
-              </motion.div>
-
-              {/* Floating card 2 */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 1 }}
-                className="absolute -right-4 lg:-right-8 bottom-1/4 bg-card rounded-xl p-4 shadow-lg animate-float"
-                style={{ animationDelay: "1s" }}
-              >
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-lg bg-secondary flex items-center justify-center">
-                    <span className="text-xl">📊</span>
-                  </div>
-                  <div>
-                    <p className="font-semibold text-foreground text-sm">Sales Up</p>
-                    <p className="text-xs text-accent font-medium">+32% this week</p>
-                  </div>
-                </div>
-              </motion.div>
-            </div>
+            </a>
           </motion.div>
         </div>
       </div>

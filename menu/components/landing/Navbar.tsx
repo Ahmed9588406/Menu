@@ -1,15 +1,19 @@
-"use client"
+"use client";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Menu, X, UtensilsCrossed } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
-    { name: "Features", href: "#features" },
-    { name: "How it Works", href: "#how-it-works" },
+    { name: "Services", href: "#services" },
+    { name: "QR Menu", href: "#qr-menu" },
+    { name: "POS System", href: "#pos" },
+    { name: "Inventory", href: "#inventory" },
+    { name: "Reports", href: "#reports" },
+    { name: "System", href: "#system" },
     { name: "Pricing", href: "#pricing" },
     { name: "Contact", href: "#contact" },
   ];
@@ -19,22 +23,19 @@ const Navbar = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
-      className="fixed top-0 left-0 right-0 z-50 glass border-b border-border/50"
+      className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-6xl"
     >
-      <div className="container mx-auto px-4 lg:px-8">
-        <div className="flex items-center justify-between h-16 lg:h-20">
+      <div className="glass rounded-2xl border border-border/50 px-6">
+        <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <a href="#" className="flex items-center gap-2">
-            <div className="w-10 h-10 rounded-xl bg-gradient-hero flex items-center justify-center">
-              <UtensilsCrossed className="w-5 h-5 text-primary-foreground" />
-            </div>
-            <span className="text-xl font-display font-bold text-foreground">
-              MenuCraft
+            <span className="text-2xl font-display font-bold text-foreground tracking-tight">
+              SNAPE<span className="text-accent">X</span>
             </span>
           </a>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-8">
+          <div className="hidden lg:flex items-center gap-6">
             {navLinks.map((link) => (
               <a
                 key={link.name}
@@ -46,13 +47,10 @@ const Navbar = () => {
             ))}
           </div>
 
-          {/* Desktop CTA */}
-          <div className="hidden lg:flex items-center gap-4">
-            <Button variant="ghost" size="default">
-              Sign In
-            </Button>
-            <Button variant="accent" size="default">
-              Get Started Free
+          {/* Language Toggle */}
+          <div className="hidden lg:flex items-center">
+            <Button variant="outline" size="sm" className="rounded-full border-border/50">
+              عربي
             </Button>
           </div>
 
@@ -70,12 +68,12 @@ const Navbar = () => {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-card border-t border-border"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            className="lg:hidden mt-2 glass rounded-2xl border border-border/50 overflow-hidden"
           >
-            <div className="container mx-auto px-4 py-6 flex flex-col gap-4">
+            <div className="px-6 py-6 flex flex-col gap-4">
               {navLinks.map((link) => (
                 <a
                   key={link.name}
@@ -87,11 +85,8 @@ const Navbar = () => {
                 </a>
               ))}
               <div className="flex flex-col gap-3 pt-4 border-t border-border">
-                <Button variant="outline" size="lg" className="w-full">
-                  Sign In
-                </Button>
-                <Button variant="accent" size="lg" className="w-full">
-                  Get Started Free
+                <Button variant="outline" size="lg" className="w-full rounded-full">
+                  عربي
                 </Button>
               </div>
             </div>
