@@ -3,6 +3,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import Link from "next/link";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -28,11 +29,11 @@ const Navbar = () => {
       <div className="glass rounded-2xl border border-border/50 px-6">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-2">
+          <Link href="/landingpage" className="flex items-center gap-2">
             <span className="text-2xl font-display font-bold text-foreground tracking-tight">
               SNAPE<span className="text-accent">X</span>
             </span>
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-6">
@@ -47,8 +48,13 @@ const Navbar = () => {
             ))}
           </div>
 
-          {/* Language Toggle */}
-          <div className="hidden lg:flex items-center">
+          {/* Dashboard & Language Toggle */}
+          <div className="hidden lg:flex items-center gap-3">
+            <Link href="/dashboard">
+              <Button variant="default" size="sm" className="rounded-full">
+                Dashboard
+              </Button>
+            </Link>
             <Button variant="outline" size="sm" className="rounded-full border-border/50">
               عربي
             </Button>
@@ -85,6 +91,11 @@ const Navbar = () => {
                 </a>
               ))}
               <div className="flex flex-col gap-3 pt-4 border-t border-border">
+                <Link href="/dashboard">
+                  <Button variant="default" size="lg" className="w-full rounded-full">
+                    Dashboard
+                  </Button>
+                </Link>
                 <Button variant="outline" size="lg" className="w-full rounded-full">
                   عربي
                 </Button>

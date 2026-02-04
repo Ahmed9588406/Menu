@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 const plans = [
   {
@@ -180,12 +181,14 @@ const Pricing = () => {
                 ))}
               </ul>
 
-              <Button
-                variant={plan.popular ? "hero" : "outline"}
-                className="w-full rounded-full"
-              >
-                {plan.cta}
-              </Button>
+              <Link href="/dashboard">
+                <Button
+                  variant={plan.popular ? "hero" : "outline"}
+                  className="w-full rounded-full"
+                >
+                  {plan.cta}
+                </Button>
+              </Link>
             </motion.div>
           ))}
         </div>
