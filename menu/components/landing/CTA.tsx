@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
+import Link from "next/link";
 
 const CTA = () => {
   return (
@@ -44,9 +45,11 @@ const CTA = () => {
               </div>
             </div>
 
-            <Button variant="hero" size="xl" className="rounded-full">
-              Get Started Now
-            </Button>
+            <Link href="/dashboard">
+              <Button variant="hero" size="xl" className="rounded-full">
+                Get Started Now
+              </Button>
+            </Link>
           </div>
         </motion.div>
       </div>

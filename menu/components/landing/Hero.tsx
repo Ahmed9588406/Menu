@@ -7,6 +7,7 @@ import phoneMockup1 from "@/public/assets/phone-mockup-1.png";
 import phoneMockup2 from "@/public/assets/phone-mockup-2.png";
 import phoneMockup3 from "@/public/assets/phone-mockup-3.png";
 import Image from "next/image";
+import Link from "next/link";
 
 const Hero = () => {
   return (
@@ -51,12 +52,16 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="flex flex-col sm:flex-row gap-4 mb-16"
           >
-            <Button variant="hero" size="xl" className="rounded-full">
-              Start Now
-            </Button>
-            <Button variant="outline" size="xl" className="rounded-full border-border/50 bg-transparent hover:bg-muted/30">
-              Our Pricing
-            </Button>
+            <Link href="/dashboard">
+              <Button variant="hero" size="xl" className="rounded-full">
+                Start Now
+              </Button>
+            </Link>
+            <a href="#pricing">
+              <Button variant="outline" size="xl" className="rounded-full border-border/50 bg-transparent hover:bg-muted/30">
+                Our Pricing
+              </Button>
+            </a>
           </motion.div>
 
           {/* Phone Mockups */}
